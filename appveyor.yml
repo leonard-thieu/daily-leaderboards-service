@@ -1,0 +1,43 @@
+version: $(VersionPrefix).{build}
+image: Visual Studio 2017
+
+skip_branch_with_pr: true
+skip_commits:
+  files:
+    - LICENSE
+    - README.md
+configuration:
+  - Release
+environment:
+  VersionPrefix: 0.0.0
+  VersionSuffix: dev
+  FileVersion: '%APPVEYOR_BUILD_VERSION%'
+notifications:
+  - provider: Slack
+    incoming_webhook:
+      secure: c7l1UmXHWpIDLL1awU4r0QYVPToYM/XjV8trFyD1oHArKxs/vBTYiKYScr1EhCUgmEX6sAFBTvkUHF/k5B+cGjzqRBR2XkAO+lzk8cHQ1FI=
+  
+before_build:
+  - nuget restore -Verbosity quiet
+build:
+  project: DailyLeaderboardsService.sln
+  verbosity: minimal
+  
+test_script:
+  - ps: |
+      $projectPath = Resolve-Path .\test\DailyLeaderboardsService.Tests\DailyLeaderboardsService.Tests.csproj
+      msbuild $projectPath /nologo /verbosity:minimal `
+          /target:Build `
+          /target:Test `
+          /property:Configuration=Coverage `
+          /property:DebugType=full
+      
+artifacts:
+  - path: \src\Installer\bin\$(Configuration)\*.msi
+    name: DailyLeaderboardsService
+
+deploy:
+  - provider: Environment
+    name: production
+    on:
+      appveyor_repo_tag: true

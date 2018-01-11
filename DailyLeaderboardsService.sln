@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{51F4C960-AFFF-4A78-9AA8-48A4720450FC}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		NuGet.Config = NuGet.Config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A26E967C-BA5A-4D6E-A7C9-C3868968B1CF}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Installer", "src\Installer\Installer.wixproj", "{383589EC-4C17-46F6-AAA2-54091E88C202}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "InstallerMM", "src\InstallerMM\InstallerMM.wixproj", "{4E3B6E6F-4E1D-4BCD-AD0F-4829DC92BC10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyLeaderboardsService", "src\DailyLeaderboardsService\DailyLeaderboardsService.csproj", "{727DA5BC-ABC8-4C71-A53A-5A9CBC01605B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1B9B95FD-BCAD-4F81-9948-A90899272FC6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyLeaderboardsService.Tests", "test\DailyLeaderboardsService.Tests\DailyLeaderboardsService.Tests.csproj", "{A68D3A36-6FA1-4807-BE41-DA77CADA0BD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{383589EC-4C17-46F6-AAA2-54091E88C202}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{383589EC-4C17-46F6-AAA2-54091E88C202}.Release|Any CPU.ActiveCfg = Release|x86
+		{383589EC-4C17-46F6-AAA2-54091E88C202}.Release|Any CPU.Build.0 = Release|x86
+		{4E3B6E6F-4E1D-4BCD-AD0F-4829DC92BC10}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4E3B6E6F-4E1D-4BCD-AD0F-4829DC92BC10}.Release|Any CPU.ActiveCfg = Release|x86
+		{4E3B6E6F-4E1D-4BCD-AD0F-4829DC92BC10}.Release|Any CPU.Build.0 = Release|x86
+		{727DA5BC-ABC8-4C71-A53A-5A9CBC01605B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727DA5BC-ABC8-4C71-A53A-5A9CBC01605B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727DA5BC-ABC8-4C71-A53A-5A9CBC01605B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{727DA5BC-ABC8-4C71-A53A-5A9CBC01605B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A68D3A36-6FA1-4807-BE41-DA77CADA0BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A68D3A36-6FA1-4807-BE41-DA77CADA0BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A68D3A36-6FA1-4807-BE41-DA77CADA0BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A68D3A36-6FA1-4807-BE41-DA77CADA0BD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{383589EC-4C17-46F6-AAA2-54091E88C202} = {A26E967C-BA5A-4D6E-A7C9-C3868968B1CF}
+		{4E3B6E6F-4E1D-4BCD-AD0F-4829DC92BC10} = {A26E967C-BA5A-4D6E-A7C9-C3868968B1CF}
+		{727DA5BC-ABC8-4C71-A53A-5A9CBC01605B} = {A26E967C-BA5A-4D6E-A7C9-C3868968B1CF}
+		{A68D3A36-6FA1-4807-BE41-DA77CADA0BD2} = {1B9B95FD-BCAD-4F81-9948-A90899272FC6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AC96556-725B-4C7B-9182-9757391C0EA9}
+	EndGlobalSection
+EndGlobal
