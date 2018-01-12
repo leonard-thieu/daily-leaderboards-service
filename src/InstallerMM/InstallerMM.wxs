@@ -20,7 +20,7 @@
         <Component Id="owcE807D2A26E8C20F2FD2DF46962A04D70" Guid="5c3c8381-08cc-9160-1e49-bf23cd893134">
           <File Id="owfE807D2A26E8C20F2FD2DF46962A04D70" Source="$(var.SourceDir)\DailyLeaderboardsService.exe" KeyPath="yes" />
           <ServiceInstall Id="si85773AFFD5CA35DE4A41AC5DA3D57A58" Name="$(var.ProductName)" DisplayName="$(var.ProductName)" Description="Updates Crypt of the NecroDancer daily leaderboards for toofz API." ErrorControl="normal" Start="auto" Type="ownProcess" Vital="yes">
-            <ServiceConfig xmlns="http://schemas.microsoft.com/wix/UtilExtension" FirstFailureActionType="restart" SecondFailureActionType="restart" ThirdFailureActionType="none" ResetPeriodInDays="1" RestartServiceDelayInSeconds="120" />
+            <ServiceConfig xmlns="http://schemas.microsoft.com/wix/UtilExtension" FirstFailureActionType="restart" SecondFailureActionType="restart" ThirdFailureActionType="restart" ResetPeriodInDays="1" RestartServiceDelayInSeconds="120" />
           </ServiceInstall>
           <ServiceControl Id="sc85773AFFD5CA35DE4A41AC5DA3D57A58" Name="$(var.ProductName)" Start="install" Stop="both" Remove="both" Wait="yes" />
           <File Id="owfA9705C6C246420A556FEBB9AC1C6A561" Source="$(var.SourceDir)\DailyLeaderboardsService.exe.config" CompanionFile="owfE807D2A26E8C20F2FD2DF46962A04D70" />
